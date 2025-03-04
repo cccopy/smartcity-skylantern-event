@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="css/style.css">
             
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
         <script src="js/float_away.js"></script>
 
         <!-- Google tag (gtag.js) -->
@@ -32,8 +34,25 @@
             
     </head>
     <body>
+
+        <!-- loading main -->
+        <main class="main-wrapper bg-city">
+            <!-- 只有這個loading + 最小高度 -->
+            <section class="block-box" style="min-height: calc(100vh - 158px);">
+                <div class="top-logo"></div>
+                <!-- 只有這個loading + 最小高度 -->
+                <div class="skylantern-box loading" style="min-height: 450px;">
+                    <div class="lantern-anime-a"></div>
+                    <div class="lantern-anime-b"></div>
+                    <div class="lantern-anime-c"></div>
+                    <div class="lantern-anime-d"></div>
+                    <div class="lantern-anime-e"></div>                    
+                </div>
+            </section>
+        </main>
+
         <!-- main -->
-        <main class="main-wrapper inside-wrapper bg-skycity">
+        <main class="main-wrapper inside-wrapper bg-skycity" style="display: none;">
             <section class="block-box">
                 <div class="top-logo"></div>
                 <div class="lantern-info">
@@ -52,8 +71,8 @@
                     </div>
                 </div>
                 <div class="btn-box both-btn">
-                    <input class="btn-gradient" type="button" value="Download">
-                    <input class="btn-gradient btn-purple " type="button" value="Try Again">
+                    <input class="btn-gradient" type="button" value="Download" onclick="onDownloadClick();">
+                    <input class="btn-gradient btn-purple " type="button" value="Try Again" onclick="location.href='./';">
                 </div>
             </section>
         </main>
