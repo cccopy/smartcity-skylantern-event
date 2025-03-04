@@ -22,10 +22,22 @@ $(document).ready(() => {
 });
 
 function onDownloadClick() {
-    var infoWrap = $("main.bg-skycity .lantern-info");
+    var filename = `${localStorage.getItem('name')}-skylantern-wish.png`;
+
+    var mainContent = $("main.bg-skycity");
+    var clonedContent = mainContent.clone();
+
+    clonedContent.css({
+        'position': 'absolute',
+        'left': '-9999px'
+    });
+
+    clonedContent.appendTo(document.body);
+
+    var infoWrap = clonedContent.find(".lantern-info");
     infoWrap.find("h3.name").css('box-shadow', 'none');
-    html2canvas(infoWrap.get(0)).then(canvas => {
-        document.body.appendChild(canvas);
-        saveAs(canvas.toDataURL('image/png'), "image.png");
+    html2canvas(infoWrap.get(0), {backgroundColor: "rgba(0,0,0,0)"}).then(canvas => {
+        clonedContent.remove();
+        saveAs(canvas.toDataURL('image/png'), filename);
     });
 }
