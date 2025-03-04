@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/style.css">
             
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/wish.js"></script>
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMHXWS2SF5"></script>
@@ -48,8 +49,8 @@
                         <fieldset>
                             <label for="name">From<br><span>祈願人姓名</span></label>
                             <br>
-                            <input class="fillin" type="text" id="name" name="name" value="Dua Lipa" placeholder="Name">
-                            <p class="note">error!! 尚未填寫等</p>
+                            <input class="fillin" type="text" id="name" name="name" value="" placeholder="Name">
+                            <p class="note" style="display: none;">姓名尚未填寫</p>
                         </fieldset>
                         <fieldset>
                            <label for="lantern">Light up your wish with a lantern!<br>
@@ -57,27 +58,27 @@
                            <br>
                            <div class="option">
                                 <div class="option-list t1">
-                                    <input type="radio" name="filter" value="Green Energy, Brighter Future" checked="">
+                                    <input type="radio" name="filter" value="Green Energy, Brighter Future" checked="" data-lantern="a">
                                     <label for="option">Green Energy, Brighter Future<br>
                                         <span>綠能永續，點亮未來</span></label>
                                 </div>
                                 <div class="option-list t2">
-                                    <input type="radio" name="filter" value="Low-Carbon Living, Planet Protection">
+                                    <input type="radio" name="filter" value="Low-Carbon Living, Planet Protection" data-lantern="b">
                                     <label for="option">Low-Carbon Living, Planet Protection<br>
                                         <span>減碳生活，守護地球</span></label>
                                 </div>
                                 <div class="option-list t3">
-                                    <input type="radio" name="filter" value="Tech Innovation, Green Transformation">
+                                    <input type="radio" name="filter" value="Tech Innovation, Green Transformation" data-lantern="c">
                                     <label for="option">Tech Innovation, Green Transformation<br>
                                         <span>科技創新，綠色轉型</span></label>
                                 </div>
                                 <div class="option-list t4">
-                                    <input type="radio" name="filter" value="LSmart Cities, Sustainable Growth">
+                                    <input type="radio" name="filter" value="LSmart Cities, Sustainable Growth" data-lantern="d">
                                     <label for="option">LSmart Cities, Sustainable Growth<br>
                                         <span>智慧城市，永續發展</span></label>
                                 </div>
                                 <div class="option-list t5">
-                                    <input type="radio" name="filter" value="Green Energy, Brighter Future">
+                                    <input type="radio" name="filter" value="Green Energy, Brighter Future" data-lantern="e">
                                     <label for="option">Sustainable Harmony, Life Thrives<br>
                                         <span>愛護生態，萬物共存</span></label>
                                 </div>
@@ -87,7 +88,7 @@
                     </form>
                 </div>
                 <div class="btn-box">
-                    <input class="btn-gradient baloon" type="button" value="Submit" onclick="location.href='float_away.html'">
+                    <input class="btn-gradient baloon" type="button" value="Submit" onclick="onSubmitClick();">
                 </div>
             </section>
         </main>
